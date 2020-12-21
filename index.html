@@ -7,30 +7,28 @@
     <title>Login</title>
 
     <script type="text/javascript">
-        function mostrar(){ 
-        
-        var user = document.getElementById("user-login").value;
-        var password = document.getElementById('password-login').value;
-        
-        alert("Usuario:"+ " " + user + " " + "senha:" + " " + password );
-    }
-    </script>
-
+        window.onload = function(){
+          firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          window.location.href = "/html/logado.html";
+        } 
+      });
+        }
+        </script>
 </head>
 <body>
     <div class="main">
-        <h1>Login</h1>
-        <form id="formulario">
-            <label class="user-login-lbl">Informe seu usuário</label>
-            <input type="text" id="user-login" class="user-login-field" placeholder="Usuário">
 
-            <label class="password-login-lbl">Informe sua senha</label>
-            <input type="password" id="password-login" class="password-login-field" placeholder="Senha">
+        <h1>Agenda Telefônica</h1>
+        <h3>Seja bem vindo(a)! </h3>
+        <div id="formulario">
+            <a id="box" href="/html/login.html" >Login</a>
+            <a id="box" href="/html/cadastro.html">Cadastrado</a>         
+      
 
-            <button class="login-btn" onclick="mostrar()">Entrar</button>
-        </form>
+        </div>
 
-        <a href="./cadastro.html">Cadastre-se</a>
+
     </div>
     
 </body>

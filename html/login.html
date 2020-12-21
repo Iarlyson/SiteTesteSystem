@@ -3,35 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>Login</title>
+    <link rel="stylesheet" href="../css/style.css">
+        <title>Login</title>
 
-    <script type="text/javascript">
-        function mostrar(){ 
-        
-        var user = document.getElementById("user-login").value;
-        var password = document.getElementById('password-login').value;
-        
-        alert("Usuario:"+ " " + user + " " + "senha:" + " " + password );
-    }
-    </script>
+        <script type="text/javascript">
+            window.onload = function(){
+              firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+              window.location.href = "logado.html";
+            } 
+          });
+            }
+            </script>
 
 </head>
 <body>
-    <div class="main">
-        <h1>Login</h1>
-        <form id="formulario">
-            <label class="user-login-lbl">Informe seu usuário</label>
-            <input type="text" id="user-login" class="user-login-field" placeholder="Usuário">
+    <div class="caixaForm">
+        <div  method="post" class="Form">
+            <h1>Login</h1>
 
-            <label class="password-login-lbl">Informe sua senha</label>
-            <input type="password" id="password-login" class="password-login-field" placeholder="Senha">
+            <label >Informe o usuário</label><br/>
+            <input type="email" id="emailLogin" name="campoLogin" placeholder="E-mail:"/><br/>
 
-            <button class="login-btn" onclick="mostrar()">Entrar</button>
-        </form>
+            <label >Informe a senha</label><br/>
+            <input type="password" id="senhaLogin"  name="campoLogin" placeholder="Senha:" /><br/>
 
-        <a href="./cadastro.html">Cadastre-se</a>
+
+            <button id="butãoLogin" onclick="login()">Entrar</button><br/>
+            <a href="Cadastro.html" class="cadastroL">Não tem uma conta? Crie uma aqui!</a>
+        </div>
     </div>
     
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+    <script src="../js/firebase.js"></script>
+    <script src="../js/systemOfAuthentication.js"></script>
+
 </body>
 </html>
