@@ -17,7 +17,7 @@ Cadastrar.addEventListener('click', function () {
     .auth()
     .createUserWithEmailAndPassword(Email.value, Senha.value)
     .then(function() {
-        alert(Email.value + " - Conta cadastrada com sucesso!");
+        alert("A conta foi cadastrada com sucesso!");
         Email.value='';
         Senha.value='';
         ConfirmacaodeSenha.value='';
@@ -27,12 +27,12 @@ Cadastrar.addEventListener('click', function () {
         // Handle Errors here.
         console.error(error.code);
         console.error(error.message);
-        alert("Falha ao cadastrar, falta dados a serem preenchidos!");
+        alert("Falha ao cadastrar, faltam dados a serem preenchidos!");
         // ...
       });
     }
     else{
-        alert("Senhas imcompativeis!");
+        alert("Senhas incompatíveis!");
     }
 });
 }
@@ -46,11 +46,11 @@ Login.addEventListener('click', function () {
     .signInWithEmailAndPassword(Email.value, Senha.value)
     .then(function(result) {
         console.log(result)
-        alert("Logado na conta " + Email.value);
+        alert("Logado com sucesso");
         Email.value='';
         Senha.value='';
         setTimeout(function() {
-            window.location.href = "maps.html";
+            window.location.href = "logado.html";
         }, 1000);
          
       
@@ -59,7 +59,7 @@ Login.addEventListener('click', function () {
     .catch(function (error) {
         console.error(error.code);
         console.error(error.message);
-        alert("Falha ao logar. O email não existe ou a senha foi digitada errada!");
+        alert("Falha ao logar. O email não existe ou a senha foi digitada incorretamente!");
 });
 
 
