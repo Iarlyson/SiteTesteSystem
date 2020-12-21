@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Login</title>
+
+    <script type="text/javascript">
+        function cadastrar(){ 
+        
+            localStorage.setItem(usuario, document.getElementById("user-login").value);
+            localStorage.setItem(senha, document.getElementById('password-login').value); 
+        
+            let Mostrarusuario = localStorage.getItem(0);
+            let Mostrarsenha = localStorage.getItem(0);
+
+            alert("Usuario:"+ " " + Mostrarusuario + " " + "senha:" + " " + Mostrarsenha );
+        }
+
+    </script>
+
+</head>
+<body>
+    <div class="main">
+        <h1>Cadastro</h1>
+        <form id="formulario">
+            <label class="user-login-lbl">Informe o usuário</label>
+            <input type="text" id="user-login" class="user-login-field" placeholder="Usuário">
+
+            <label class="password-login-lbl">Informe a senha</label>
+            <input type="password" id="password-login" class="password-login-field" placeholder="Senha">
+
+            <button class="login-btn" onclick="cadastrar()">Cadastrar</button>
+            <button class="mostrar-btn" onclick="mostrar()">Mostrar</button>
+        </form>
+
+        <a href="./login.html">Voltar</a>
+    </div>
+    
+</body>
+</html>

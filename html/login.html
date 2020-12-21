@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Login</title>
+
+    <script type="text/javascript">
+        function mostrar(){ 
+        
+        var user = document.getElementById("user-login").value;
+        var password = document.getElementById('password-login').value;
+        
+        alert("Usuario:"+ " " + user + " " + "senha:" + " " + password );
+    }
+    </script>
+
+</head>
+<body>
+    <div class="main">
+        <h1>Login</h1>
+        <form id="formulario">
+            <label class="user-login-lbl">Informe seu usuário</label>
+            <input type="text" id="user-login" class="user-login-field" placeholder="Usuário">
+
+            <label class="password-login-lbl">Informe sua senha</label>
+            <input type="password" id="password-login" class="password-login-field" placeholder="Senha">
+
+            <button class="login-btn" onclick="mostrar()">Entrar</button>
+        </form>
+
+        <a href="./cadastro.html">Cadastre-se</a>
+    </div>
+    
+</body>
+</html>
